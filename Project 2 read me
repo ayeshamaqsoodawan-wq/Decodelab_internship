@@ -1,0 +1,55 @@
+# Project 2 – Backend API Development
+**DecodeLabs Industrial Training Kit | Full Stack Development Internship**
+
+## 📌 Overview
+This is Project 2 of the DecodeLabs Industrial Training Kit — the "integration phase" of the
+internship. The goal was to build a simple, reliable backend API that handles application
+logic: creating, reading, updating, and validating data through clean REST endpoints.
+
+The deliverable is the **Drafting Board API**, a RESTful task-management API built with
+Node.js and Express, designed as the backend companion to the Project 1 frontend.
+
+## 🎯 Project Goal
+Develop a simple backend API to handle application logic, including:
+- API endpoints (GET / POST, plus PUT / DELETE)
+- Handling of user input and responses
+- Basic data validation
+
+## 🛠️ Built With
+- **Node.js**
+- **Express.js**
+- In-memory data store (no external database required)
+
+## 📂 File Structure
+project2/
+├── server.js
+├── routes/tasks.js
+├── middleware/validateTask.js
+├── data/store.js
+├── requests.http
+├── package.json
+## 🔌 API Endpoints
+
+| Method | Endpoint            | Description                          | Success Code |
+|--------|---------------------|---------------------------------------|---------------|
+| GET    | `/`                  | Health check + endpoint list          | 200 |
+| GET    | `/api/tasks`         | List all tasks                        | 200 |
+| GET    | `/api/tasks?done=true` | Filter tasks by completion status  | 200 |
+| GET    | `/api/tasks/:id`     | Get a single task                     | 200 |
+| POST   | `/api/tasks`         | Create a new task                     | 201 |
+| PUT    | `/api/tasks/:id`     | Update an existing task                | 200 |
+| DELETE | `/api/tasks/:id`     | Remove a task                         | 204 |
+
+## 🧾 Status Codes Used
+- `200 OK`, `201 Created`, `204 No Content`
+- `400 Bad Request` – failed validation
+- `404 Not Found` – unknown route or task id
+- `500 Internal Server Error` – unexpected failure
+
+## 🚀 How to Run
+```bash
+npm install
+npm start
+Server runs at http://localhost:3000. Test with requests.http or curl/Postman.
+👤 Author
+Ayesha Maqsood — DecodeLabs Internship, Batch 2026
