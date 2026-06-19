@@ -1,0 +1,15 @@
+{
+  "name": "drafting-board-api",
+  "version": "1.0.0",
+  "description": "Project 2 - Backend API Development | DecodeLabs Industrial Training Kit",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "license": "MIT"
+}

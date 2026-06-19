@@ -1,0 +1,42 @@
+### Health check
+GET http://localhost:3000/
+
+### List all tasks
+GET http://localhost:3000/api/tasks
+
+### Filter: only open tasks
+GET http://localhost:3000/api/tasks?done=false
+
+### Get a single task
+GET http://localhost:3000/api/tasks/1
+
+### Get a task that doesn't exist (expect 404)
+GET http://localhost:3000/api/tasks/999
+
+### Create a task (expect 201)
+POST http://localhost:3000/api/tasks
+Content-Type: application/json
+
+{
+  "label": "Deploy the API to a free host",
+  "priority": "critical"
+}
+
+### Create a task with invalid data (expect 400)
+POST http://localhost:3000/api/tasks
+Content-Type: application/json
+
+{
+  "label": ""
+}
+
+### Update a task (expect 200)
+PUT http://localhost:3000/api/tasks/3
+Content-Type: application/json
+
+{
+  "done": true
+}
+
+### Delete a task (expect 204)
+DELETE http://localhost:3000/api/tasks/4
