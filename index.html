@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drafting Board — Site Plan for Today</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@400;500&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="#top" aria-label="Drafting Board home">
+        <span class="logo-mark" aria-hidden="true">⌐</span>
+        <span class="logo-text">Drafting<strong>Board</strong></span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="primary-nav" id="primaryNav" aria-label="Primary">
+        <ul>
+          <li><a href="#plan">Site Plan</a></li>
+          <li><a href="#board">Today's Board</a></li>
+          <li><a href="#legend">Legend</a></li>
+        </ul>
+        <button class="btn btn-accent" id="newTaskBtn" type="button">+ New Item</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <section class="hero" id="plan" aria-labelledby="heroTitle">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">SHEET 01 — RESPONSIVE INTERFACE</p>
+          <h1 id="heroTitle">Draft the plan.<br>Build at any scale.</h1>
+          <p class="hero-sub">A site plan for your day, rendered the way an architect renders a building: structure first, finish second. Resize this window — the plan redraws itself.</p>
+          <div class="hero-actions">
+            <a href="#board" class="btn btn-primary">View today's board</a>
+            <a href="#legend" class="btn btn-ghost">Read the legend</a>
+          </div>
+        </div>
+        <div class="hero-plan" aria-hidden="true">
+          <div class="plan-card">
+            <span class="tick tick-top"></span>
+            <span class="tick tick-left"></span>
+            <div class="plan-row"></div>
+            <div class="plan-row short"></div>
+            <div class="plan-grid-mini">
+              <span></span><span></span><span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="board" id="board" aria-labelledby="boardTitle">
+      <div class="board-head">
+        <h2 id="boardTitle">Today's Board</h2>
+        <p class="board-count"><span id="openCount">0</span> open · <span id="doneCount">0</span> complete</p>
+      </div>
+
+      <div class="board-layout">
+
+        <aside class="filters" aria-label="Filters">
+          <h3>Filter by status</h3>
+          <div class="filter-buttons" id="filterButtons">
+            <button class="chip is-active" data-filter="all" type="button">All</button>
+            <button class="chip" data-filter="open" type="button">Open</button>
+            <button class="chip" data-filter="done" type="button">Complete</button>
+          </div>
+
+          <h3>Add to the plan</h3>
+          <form id="taskForm" class="task-form">
+            <label for="taskInput">New item</label>
+            <input type="text" id="taskInput" placeholder="e.g. Frame the footer" required>
+            <select id="taskPriority" aria-label="Priority">
+              <option value="standard">Standard</option>
+              <option value="critical">Critical path</option>
+            </select>
+            <button type="submit" class="btn btn-primary btn-block">Add to board</button>
+          </form>
+        </aside>
+
+        <div class="task-grid" id="taskGrid">
+          <!-- task articles injected here by script.js -->
+        </div>
+
+      </div>
+    </section>
+
+    <section class="legend" id="legend" aria-labelledby="legendTitle">
+      <h2 id="legendTitle">Legend</h2>
+      <div class="legend-grid">
+        <article class="legend-card">
+          <span class="legend-swatch swatch-mocha"></span>
+          <h3>Mocha Mousse</h3>
+          <p>Stability. Used for structure: headers, frames, primary actions.</p>
+        </article>
+        <article class="legend-card">
+          <span class="legend-swatch swatch-blue"></span>
+          <h3>Ethereal Blue</h3>
+          <p>Trust. Used for state changes — links, focus, completion.</p>
+        </article>
+        <article class="legend-card">
+          <span class="legend-swatch swatch-grey"></span>
+          <h3>Moonlit Grey</h3>
+          <p>Refinement. The paper this whole plan is drawn on.</p>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>Drafted by an intern, not a framework. HTML, CSS &amp; vanilla JS only.</p>
+      <p class="footer-meta">DecodeLabs · Industrial Training Kit · Project 1</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
